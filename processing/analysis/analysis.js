@@ -233,7 +233,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
     },
     (callback) => {
       // Call Classify passing the image in the request
-      var watsonparams = {classifier_ids: ["Radox_854417721", "default"], threshold: 0.2};
+      var watsonparams = {classifier_ids: ["Radox_1482641125", "default"], threshold: 0.2};
       // http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?curl#classify_an_image
       fs.createReadStream(fileName).pipe(
         request({
