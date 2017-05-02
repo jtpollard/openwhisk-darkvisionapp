@@ -146,7 +146,7 @@ function install(ow) {
       const keyAndValues = {
         cloudantUrl: `https://${process.env.CLOUDANT_username}:${process.env.CLOUDANT_password}@${process.env.CLOUDANT_host}`,
         cloudantDbName: process.env.CLOUDANT_db,
-        watsonApiKey: process.env.WATSON_API_KEY,
+        watsonApiKey: "c56d0fc2ba9d9d4be4f03bfa0503c1ec8ab0005a",
         sttUrl: process.env.STT_URL,
         sttUsername: process.env.STT_USERNAME,
         sttPassword: process.env.STT_PASSWORD,
