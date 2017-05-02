@@ -251,7 +251,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
             console.log('Image Keywords', err);
           } else if (body.images && body.images.length > 0) {
             analysis.image_keywords = body.images[0].classifiers[0].classes;
-            if (body.images.classifiers.length > 1){
+            if (body.images[0].classifiers.length > 1){
               console.log('Image Keywords 1 Output: ' + JSON.stringify(body.images[0].classifiers[1].classes));
               body.images.classifiers[1].classes.forEach(function(item){
               analysis.image_keywords.push(item);
