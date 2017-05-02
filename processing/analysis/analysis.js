@@ -253,7 +253,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
             console.log('Images Output: ' + JSON.stringify(body.images));
             if (body.images[0].classifiers.length > 1){
               console.log('Image Keywords 1 Output: ' + JSON.stringify(body.images[0].classifiers[1].classes));
-              body.images.classifiers[1].classes.forEach(function(item){
+              body.images[0].classifiers[1].classes.forEach(function(item){
               analysis.image_keywords.push(item);
               });
                 }
