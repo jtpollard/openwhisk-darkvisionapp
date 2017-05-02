@@ -233,13 +233,14 @@ function analyzeImage(args, fileName, analyzeCallback) {
     },
     (callback) => {
       // Call Classify passing the image in the request
+      var watsonparams = {classifier_ids: ['Radox_854417721']};
       // http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?curl#classify_an_image
       fs.createReadStream(fileName).pipe(
         request({
           method: 'POST',
           url: 'https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
             '?api_key=' + args.watsonApiKey +
-            '&params={classifier_ids: ['Radox_854417721']}' +
+            '&params=' + watsonparams +
             '&version=2016-05-20',
           headers: {
             'Content-Length': fs.statSync(fileName).size
