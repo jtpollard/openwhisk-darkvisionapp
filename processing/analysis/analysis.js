@@ -239,7 +239,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
           method: 'POST',
           url: 'https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
             '?api_key=' + args.watsonApiKey +
-            '&classifiers=Radox_1482641125,default' +
+            '&classifier_ids=Radox_1482641125,default' +
             '&version=2016-05-20',
           headers: {
             'Content-Length': fs.statSync(fileName).size
