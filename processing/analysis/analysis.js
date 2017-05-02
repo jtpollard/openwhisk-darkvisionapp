@@ -233,7 +233,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
     },
     (callback) => {
       // Call Classify passing the image in the request
-      var watsonparams = {classifier_ids: ["Radox_854417721"], threshold: 0.2};
+      var watsonparams = {classifier_ids: ["Radox_854417721", "default"], threshold: 0.2};
       // http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?curl#classify_an_image
       fs.createReadStream(fileName).pipe(
         request({
@@ -251,9 +251,15 @@ function analyzeImage(args, fileName, analyzeCallback) {
             console.log('Image Keywords', err);
           } else if (body.images && body.images.length > 0) {
             analysis.image_keywords = body.images[0].classifiers[0].classes;
+            if (body.images.classifiers.length > 1){
+              console.log('Image Keywords 1 Output: ' + JSON.stringify(body.images[0].classifiers[1].classes));
+              body.images.classifiers[1].classes.forEach(function(item){
+              analysis.image_keywords.push(item);
+              });
+                }
             console.log('Request: ' + request.url);
             console.log('Image Keywords 0 Output: ' + JSON.stringify(body.images[0].classifiers[0].classes));
-            console.log('Image Keywords 1 Output: ' + JSON.stringify(body.images[0].classifiers[1].classes));
+
           }
           callback(null);
         }));
