@@ -339,7 +339,7 @@ app.get('/api/videos/:id', (req, res) => {
 
           if (image.analysis && image.analysis.image_keywords) {
             //push image text as an image keyword
-            if (image.analysis.image_text){image.analysis.image_keywords.push(image.analysis.image_text);}
+            //if (image.analysis.image_text){image.analysis.image_keywords.push(image.analysis.image_text);}
 
             image.analysis.image_keywords.forEach((keyword) => {
               if (!keywordToOccurrences[keyword.class]) {
