@@ -93,6 +93,8 @@
               <ul class="entry-taglist">
                 <li ng-repeat="keyword in image.analysis.image_keywords" class="entry-tag"><span
                   class="tag tag-keyword">{{keyword.class}} {{keyword.score | formatPercent}}%</span></li>
+                <li><span
+                  class="tag tag-keyword">{{image.analysis.image_text}}</span></li>
               </ul>
             </div>
             <div flex class="entry-faces">
