@@ -100,8 +100,8 @@
               <span class="no-tag" ng-if="!image.analysis.image_text">No data yet</span>
               <span class="no-tag" ng-if="image.analysis.image_text.length == 0">No tag detected</span>
               <ul class="entry-taglist">
-                <li ng-repeat="image_text in image.analysis.image_text" class="entry-tag"><span
-                  class="tag tag-keyword">{{image_text}}</span></li>
+                <li ng-repeat="image_text_content in image.analysis.image_text" class="entry-tag"><span
+                  class="tag tag-keyword">{{image_text_content}}</span></li>
               </ul>
             </div>
             
