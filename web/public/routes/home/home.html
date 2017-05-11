@@ -97,6 +97,16 @@
                   class="tag tag-keyword">{{image.analysis.image_text}}</span></li>
               </ul>
             </div>
+            <div>
+              <h4>Image Text</h4>
+              <span class="no-tag" ng-if="!image.analysis.image_text">No data yet</span>
+              <span class="no-tag" ng-if="image.analysis.image_text.length == 0">No tag detected</span>
+              <ul class="entry-taglist">
+                <li><span
+                  class="tag tag-keyword">{{image.analysis.image_text}}</span></li>
+              </ul>  
+            </div>
+            
             <div flex class="entry-faces">
               <h4>Face Detection</h4>
               <span class="no-tag" ng-if="!image.analysis.face_detection">No data yet</span>
