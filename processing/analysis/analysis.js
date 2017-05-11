@@ -281,8 +281,8 @@ function analyzeImage(args, fileName, analyzeCallback) {
           if (err) {
             //console.log('Image Keywords', err);
           } else if (body.images && body.images.length > 0) {
-            
-            analysis.image_text = body.images[0].text;
+            analysis.image_text = [];
+            analysis.image_text.push(body.images[0].text);
           }
           callback(null);
         }));
