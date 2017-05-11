@@ -93,11 +93,9 @@
               <ul class="entry-taglist">
                 <li ng-repeat="keyword in image.analysis.image_keywords" class="entry-tag"><span
                   class="tag tag-keyword">{{keyword.class}} {{keyword.score | formatPercent}}%</span></li>
-                <li><span
-                  class="tag tag-keyword">{{image.analysis.image_text}}</span></li>
               </ul>
             </div>
-            <div>
+            <div flex class="entry-tags">
               <h4>Image Text</h4>
               <span class="no-tag" ng-if="!image.analysis.image_text">No data yet</span>
               <span class="no-tag" ng-if="image.analysis.image_text.length == 0">No tag detected</span>
