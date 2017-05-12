@@ -224,6 +224,14 @@
                       ng-if="!controller.showMoreKeywords">and {{controller.data.selectedSummary.image_keywords.length - 15}} more...</span><span ng-if="controller.showMoreKeywords">show less</span></li>
               </ul>
             </div>
+            
+            <div>
+              <h4>Image Text</h4>
+              <ul class="entry-taglist">
+                <li ng-repeat="image_text_content in image.analysis.image_text track by $index" class="entry-tag"><span
+                  class="tag tag-keyword">{{image_text_content}}</span></li>
+              </ul>
+            </div>
 
             <div ng-if="controller.isVideo() && controller.data.summary.audio.analysis.nlu.keywords">
               <h4>Audio Keywords</h4>
