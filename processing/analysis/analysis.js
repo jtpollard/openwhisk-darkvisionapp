@@ -231,6 +231,37 @@ function analyzeImage(args, fileName, analyzeCallback) {
           callback(null);
         }));
     },
+    
+    (callback) => {
+    
+      // Call Text Recognition passing the image in the request
+
+      fs.createReadStream(fileName).pipe(
+        request({
+          method: 'POST',
+          url: 'https://gateway-a.watsonplatform.net/visual-recognition/api/v3/recognize_text' + // eslint-disable-line
+            '?api_key=' + args.watsonApiKey +
+            '&version=2016-05-20',
+          headers: {
+            'Content-Length': fs.statSync(fileName).size
+          },
+          json: true
+        }, (err, response, body) => {
+          if (err) {
+            //console.log('Image Keywords', err);
+          } else if (body && body.length > 0) {
+            
+            if (body.images && body.images.length > 0){
+            analysis.image_text = [];
+            analysis.image_text.push(body.images[0].text);
+            }
+          }
+          callback(null);
+        }));
+    },
+    
+    
+    
     (callback) => {
       // Call Classify passing the image in the request
       // http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?curl#classify_an_image
