@@ -232,6 +232,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
         }));
     },
     (callback) => {
+      /*
       // Call Classify passing the image in the request
       // http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?curl#classify_an_image
       fs.createReadStream(fileName).pipe(
@@ -265,6 +266,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
         }));
     },
     (callback) => {
+      */
       // Call Text Recognition passing the image in the request
 
       fs.createReadStream(fileName).pipe(
