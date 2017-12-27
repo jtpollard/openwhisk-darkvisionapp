@@ -282,9 +282,12 @@ function analyzeImage(args, fileName, analyzeCallback) {
         }, (err, response, body) => {
           if (err) {
             //console.log('Image Keywords', err);
-          } else if (body.images && body.images.length > 0) {
+          } else if (body && body.length > 0) {
+            
+            if (body.images && body.images.length > 0){
             analysis.image_text = [];
             analysis.image_text.push(body.images[0].text);
+            }
           }
           callback(null);
         }));
